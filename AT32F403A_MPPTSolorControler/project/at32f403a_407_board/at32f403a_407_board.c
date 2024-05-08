@@ -317,12 +317,16 @@ void at32_key_init(void)
 
 uint8_t Key_Scan(void)
 {	
+	static uint8_t cnt = 0;
 	/*检测是否有按键按下 */
 	if (!gpio_input_data_bit_read(KEY_GPIO,KEY1_PIN) || !gpio_input_data_bit_read(KEY_GPIO,KEY2_PIN))  
 	{	 
-		dwt_delay_ms(100);
-		if (!gpio_input_data_bit_read(KEY_GPIO,KEY1_PIN))	return KEY1;
-		else if (!gpio_input_data_bit_read(KEY_GPIO,KEY2_PIN))	return KEY2;
+		if (++cnt >= 2)
+		{
+			cnt = 0;
+			if (!gpio_input_data_bit_read(KEY_GPIO,KEY1_PIN))	return KEY1;
+			else if (!gpio_input_data_bit_read(KEY_GPIO,KEY2_PIN))	return KEY2;
+		}
 	}
 	return 0;
 }

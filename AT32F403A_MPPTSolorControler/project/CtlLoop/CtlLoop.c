@@ -177,8 +177,8 @@ void increPid_init(void)
 	pid_ctrol[0].a1 = VIN_KP + 2 * VIN_KD;
 	pid_ctrol[0].a2 = VIN_KD;
 	pid_ctrol[0].Ek_Dead = 0.01f;
-	pid_ctrol[0].Output_max = 3;	//MPPT串Iout,输出为Iout
 	pid_ctrol[0].Output_min = 0;
+	pid_ctrol[0].Output_max = 3;	//MPPT串Iout,输出为Iout
 	pid_ctrol[0].Incem = 0;
 	
 	//VoutPID控制环参数初始化
@@ -187,12 +187,12 @@ void increPid_init(void)
 	pid_ctrol[2].a1 = VOUT_KP + 2 * VOUT_KD;
 	pid_ctrol[2].a2 = VOUT_KD;
 	pid_ctrol[2].Ek_Dead = 0.01f;
-	pid_ctrol[2].Output_min = MIN_BUKC_DUTY;
-	pid_ctrol[2].Output_max = MAX_BUCK_DUTY;
+	pid_ctrol[2].Output_min = 0;
+	pid_ctrol[2].Output_max = 3;
 	pid_ctrol[2].Incem = 0;
 	
 	//IoutPID控制环参数初始化
-	pid_ctrol[3].target = 1.0f;
+	pid_ctrol[3].target = 3.0f;
 	pid_ctrol[3].a0 = IOUT_KP + IOUT_KI + IOUT_KD;
 	pid_ctrol[3].a1 = IOUT_KP + 2 * IOUT_KD;
 	pid_ctrol[3].a2 = IOUT_KD;
@@ -238,54 +238,45 @@ uint8_t CV_flag = 0;
 /* 环路控制 */
 void Buck_LoopControl(void)
 {	
-	/* Vout恒压控制 */
-	/*
-	gLowFilterVI[2].Input = adc1_ordinary_valuetab[2] * dac_eff.Vout_eff_k + dac_eff.Vout_eff_b;
-	low_filter_calc(&gLowFilterVI[2]);
+	static uint8_t v_loop_ctrcnt = 0;
 	
-	pid_ctrol[2].value = gLowFilterVI[2].Output;
-	pwm = increPid_cal(&pid_ctrol[2]);
-	*/
-	
-		/* 若开启了mppt模式, 对Vin做pid计算 */
-	if (mppt_enable)
+	if (mppt_enable) //作为mppt计算功率的实时数据
 	{
 		gLowFilterVI[0].Input = adc1_ordinary_valuetab[0] * dac_eff.Vin_eff_k + dac_eff.Vin_eff_b;
 		low_filter_calc(&gLowFilterVI[0]);//滤波
-//		pid_ctrol[0].target = gLowFilterVI[0].Output; //对Vin来说这是实际value值
-		pid_ctrol[0].value = gLowFilterVI[0].Output; //对Vin来说这是实际value值
 		
-//		if (chargerMode)//若电池充电,MPPT串Iout,MPPT限流
-//		{
-			pid_ctrol[3].target = increPid_cal(&pid_ctrol[0]);
-//		}
-//		else	//若常规负载恒压输出，双环竞争
-//		{
-//			pwm = f_min(pid_ctrol[0].Output, pwm);
-//		}
+		gLowFilterVI[1].Input = ((int32_t)adc1_ordinary_valuetab[1] - dac_eff.Iin_offset) * dac_eff.Iin_eff_k;
+		low_filter_calc(&gLowFilterVI[1]);
 	}
-	
-	/* 若为电池充电, 对Iout做pid计算 */
-//	if (chargerMode)
-//	{
-		gLowFilterVI[3].Input = ((int32_t)adc1_ordinary_valuetab[3] - dac_eff.Iout_offset) * dac_eff.Iout_eff_k;
-		low_filter_calc(&gLowFilterVI[3]);
-		pid_ctrol[3].value = gLowFilterVI[3].Output;
-	
-		increPid_cal(&pid_ctrol[3]);
-		pwm = pid_ctrol[3].Output;	 ///111
-	
-//		if (pid_ctrol[3].Output < pwm)
-//		{
-//			CV_flag = 0;
-//		}
-//		else if (pid_ctrol[3].Output > pwm)
-//		{
-//			CV_flag = 1;
-//		}
+
+	if (++v_loop_ctrcnt >= 10)
+	{
+		v_loop_ctrcnt = 0;
+		/* Vout pid control*/
+		gLowFilterVI[2].Input = adc1_ordinary_valuetab[2] * dac_eff.Vout_eff_k + dac_eff.Vout_eff_b;
+		low_filter_calc(&gLowFilterVI[2]);
+		pid_ctrol[2].value = gLowFilterVI[2].Output;
 		
-//		pwm = f_min(pid_ctrol[3].Output, pwm);
-//	}
+		pid_ctrol[3].target = increPid_cal(&pid_ctrol[2]);
+		
+		/* 若开启了mppt模式, Vin pid control */
+		if (mppt_enable)
+		{
+			pid_ctrol[0].target = gLowFilterVI[0].Output; //得到Vin实时值
+			
+			increPid_cal(&pid_ctrol[0]);
+			
+			pid_ctrol[3].target = f_min(pid_ctrol[0].Output, pid_ctrol[2].Output);
+		}
+	} 
+	
+	/* 由Iout设定pwm */
+	gLowFilterVI[3].Input = ((int32_t)adc1_ordinary_valuetab[3] - dac_eff.Iout_offset) * dac_eff.Iout_eff_k;
+	low_filter_calc(&gLowFilterVI[3]);
+	pid_ctrol[3].value = gLowFilterVI[3].Output;
+	
+	increPid_cal(&pid_ctrol[3]);
+	pwm = pid_ctrol[3].Output;	 ///111
 
 	//更新对应寄存器
 	TMR1->c1dt = (uint16_t)(pwm * 2398 );

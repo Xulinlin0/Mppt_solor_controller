@@ -100,11 +100,7 @@ void TMR1_OVF_TMR10_IRQHandler(void)
  /* 判断溢出标志位是否置起 */
  if(tmr_flag_get(TMR1, TMR_OVF_FLAG) == SET)
  {
-	 #ifdef TEST_DEBUG
-//	 charger3degreeCtrl(); //电池三段式
-	 #else
 	 Buck_LoopControl();
-	 #endif
 	
 	 tmr_flag_clear(TMR1, TMR_OVF_FLAG);
  }

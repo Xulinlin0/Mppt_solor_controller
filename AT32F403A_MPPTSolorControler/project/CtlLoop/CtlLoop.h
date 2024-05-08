@@ -45,6 +45,7 @@
 
 
 /*------------ PID参数  ------------*/
+/*------ V1板	-------*/
 //位置式
 /*
 #define BUCK_VKP    				0.0458f		//电压环PI环路P值，调试数据
@@ -52,14 +53,15 @@
 #define BUCK_VKD						0.0f
 */
 
+/*------ V2板	-------*/
 /* 增量式 */
-/* V2 50KHZ的
+/* V2 开关f：50KHZ 输出：pwm
 #define VOUT_KP    				0.04468f		//电压环PI环路P值，调试数据
 #define VOUT_KI     			0.0046f	  //电压环PI环路I值，调试数据
 #define VOUT_KD						0.00000f
 */
 
-//Vout	V2
+//Vout	V2	输出：pwm
 /*
 #define VOUT_KP    				0.06833f		//电压环PI环路P值，调试数据
 #define VOUT_KI     			0.00025f	  //电压环PI环路I值，调试数据
@@ -73,27 +75,29 @@ Ki 0.00689
 #define IOUT_KI     			0.0078f	 //电流环PI环路I值，调试数据
 #define IOUT_KD						0.0022f
 */
+/*------ V3板	-------*/
+//Vin 	开关f：100KHZ	输出：pwm
+/*
+#define VIN_KP		  0.00018f		
+#define VIN_KI			0.0000035f	  
+#define VIN_KD			0.000f
+*/
 
-//Vin 原Vin调参
-//#define VIN_KP		  0.008f		
-//#define VIN_KI			0.0001f	  
-//#define VIN_KD			0.000f
+//Vout	开关f：100KHZ	输出：pwm
+/*
+#define VOUT_KP			0.05f			
+#define VOUT_KI		  0.008f
+#define VOUT_KD			0.00f
+*/
 
-//#define VIN_KP		  0.049f		
-//#define VIN_KI			0.000f	  
-//#define VIN_KD			0.000f
-
-//#define VIN_KP		  0.00018f		
-//#define VIN_KI			0.0000035f	  
-//#define VIN_KD			0.000f
-
-#define VIN_KP		  0.07f		
-#define VIN_KI			0.00f	  
+//Vin		开关f：100KHZ	输出：Iout
+#define VIN_KP		  0.32f		
+#define VIN_KI			0.005f	  
 #define VIN_KD			0.000f
 
 //Vout
-#define VOUT_KP			0.05f			
-#define VOUT_KI		  0.008f
+#define VOUT_KP			0.1f			
+#define VOUT_KI		  0.001f
 #define VOUT_KD			0.00f
 
 //Iout 
@@ -109,7 +113,7 @@ Ki 0.00689
 #define VOUT_OVER_VAL    		0   // 输出过压
 //#define VIN_UNDER_VAL    		614   // 输入欠压 15V欠压点
 #define VIN_UNDER_VAL    		491   // 输入欠压	12V欠压点
-#define VIN_OVER_VAL				1433		// 输入过压 35V
+#define VIN_OVER_VAL				1638		// 输入过压 40V
 #define MIN_UVP_VAL_RE  		0  
 #define MAX_VIN_OVP_VAL    	0
 
@@ -179,10 +183,6 @@ enum loop_fault
 int8_t ExcursionCheck(void);
 void ADCSample(uint8_t Iopen);
 void increPid_init(void);
-
-#ifdef TEST_DEBUG
-	void charger3degreeCtrl(void);	 //电池三段式
-#endif
 
 void Buck_LoopControl(void); //环路控制
 uint8_t LoopFaultCheck(uint8_t Iopen, uint8_t cnt);//环路保护

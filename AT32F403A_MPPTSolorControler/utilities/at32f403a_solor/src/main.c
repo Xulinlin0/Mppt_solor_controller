@@ -55,7 +55,7 @@ TaskHandle_t sStateRun_handler;
 
 // mode flag
 uint8_t	DeviceSwitch = 0;
-uint8_t	chargerMode = 0;
+uint8_t	chargerMode = 1;
 uint8_t	mppt_enable = 1;
 
 /*
@@ -128,7 +128,7 @@ void sStateInit_task_function(void *pvParameters)
 			tmr_channel_enable(TMR1,TMR_SELECT_CHANNEL_1C, TRUE);	//打开TIMR1ch1，输出pwm
 			tmr_interrupt_enable(TMR1, TMR_OVF_INT, TRUE);				//打开TIMR1中断，开启PID控制
 
-//			printf("Iin_offset= %d,Iout_offset = %d\r\n",dac_eff.Iin_offset, dac_eff.Iout_offset);
+//			SEGGER_RTT_printf("Iin_offset= %d,Iout_offset = %d\r\n",dac_eff.Iin_offset, dac_eff.Iout_offset);
 				
 			xTaskNotifyGive(sStateRun_handler);
 			ulTaskNotifyTake(pdFALSE, portMAX_DELAY);
@@ -160,6 +160,8 @@ void sStateFault_task_function(void *pvParameters)
 		tmr_channel_enable(TMR1,TMR_SELECT_CHANNEL_1, FALSE);	//打开TIMR1ch1，输出pwm
 		tmr_channel_enable(TMR1,TMR_SELECT_CHANNEL_1C, FALSE);	//打开TIMR1ch1，输出pwm
 		
+		SEGGER_RTT_printf(1,"loop_err = %d, chanrge_err = %d\r\n", loop_err, gMy_Battry.err_code);
+		
 		if (loop_err)
 		{
 			if (none == LoopFaultBack(loop_err, 3))
@@ -186,7 +188,7 @@ void sStateFault_task_function(void *pvParameters)
 	}
 }
 
-uint8_t target = 0;
+float target = 0;
 /*1 RUN*/
 /* sStateRun_task_function */
 void sStateRun_task_function(void *pvParameters)
@@ -206,13 +208,6 @@ void sStateRun_task_function(void *pvParameters)
 			ulTaskNotifyTake(pdFALSE, portMAX_DELAY);
 		}
 		
-		if (mppt_enable)
-		{
-//			pid_ctrol[0].value = mpptmode_PVctr(1);
-			pid_ctrol[0].target = mpptmode_PVctr(1);
-			target = pid_ctrol[0].target;
-		}
-		
 		if (chargerMode)//若为电池充电模式
 		{
 			if (charge_fault == ChargeStateCalc(&gMy_Battry))
@@ -224,23 +219,18 @@ void sStateRun_task_function(void *pvParameters)
 			else
 			{
 				pid_ctrol[2].target = gMy_Battry.charge_voltage; 	 //停止电流
-				pid_ctrol[3].target = gMy_Battry.charge_current; 
+				pid_ctrol[2].Output_max = gMy_Battry.charge_current; 
 			}
 		}
-
+		
+		if (mppt_enable)
+		{
+			pid_ctrol[0].value = mpptmode_PVctr(1);	
+			target = pid_ctrol[0].value;//1111
+			pid_ctrol[0].Output_max = gMy_Battry.charge_current; 
+		}
+		
 		SEGGER_RTT_printf(0,"%f\r\n", pid_ctrol[3].target);
-		/*
-		SEGGER_RTT_printf(1, "%f, %f, %f, %f, %f\r\n", SADC.VinAvg, SADC.IinAvg, SADC.VoutAvg, SADC.IoutAvg, pwm);	
-		if (CV_flag == 0)
-		{
-			SEGGER_RTT_printf(1, "CC ");
-		}
-		else if (CV_flag == 1)
-		{
-			SEGGER_RTT_printf(1, "CV ");
-		}
-		SEGGER_RTT_printf(1, "%f, %f\r\n", pid_ctrol[0].value, pv_Pin);
-		*/
 		
 		if ((Netbutton == 0) || KEY1 == Key_Scan())	//物联网传输关闭输出或按下KEY1
 		{
@@ -349,18 +339,22 @@ void SetupHardware()
 
 	// BuckBoard_init();				/* init BuckBoard --- first! */
   at32_led_init();  					/* init led2 */
+	
+	at32_led_on(LED1);
+	
 	at32_key_init();						/* init key */
 	
 	ADC_INIT();									/* init adc */
 	TMR1_Init();								/* init timer */
 	
-//	while (esp8266_Init())			/* init esp8266 */
-//	{
-//		dwt_delay_ms(100);
-//	}
-//	
-//	OLED_Init();	  		 				/* init oled */
-		
+	while (esp8266_Init())			/* init esp8266 */
+	{
+		dwt_delay_ms(100);
+	}
+	
+	OLED_Init();	  		 				/* init oled */
+	
+	at32_led_on(LED2);	
 }
 
 void start_task_function(void *pvParameters)
@@ -370,7 +364,7 @@ void start_task_function(void *pvParameters)
   xTaskCreate(sStateInit_task_function,"Init_task", (uint16_t)100, NULL, 3, &sStateInit_handler);
   xTaskCreate(sStateFault_task_function,"Fault_task", (uint16_t)100, NULL, 2, &sStateFault_handler);
   xTaskCreate(sStateRun_task_function,"Run_task", (uint16_t)100, NULL, 1, &sStateRun_handler);
-//  xTaskCreate(show_task_function,"show_task", (uint16_t)500, NULL, 1, NULL);
+  xTaskCreate(show_task_function,"show_task", (uint16_t)500, NULL, 1, NULL);
 	
 	vTaskDelete(NULL);
 	
