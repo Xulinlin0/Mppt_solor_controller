@@ -43,12 +43,12 @@ float mpptmode_PVctr(uint8_t cnt)
 	/*
 		注意要考虑一下mppt算法的调用频率
 	*/
-	if (++mppt_run_count == cnt) 
+	if (++mppt_run_count >= cnt) 
 	{
 		mppt_run_count = 0;
 		 
 		/* 功率降低，改变扰动方向 */
-		if (pv_Plast - pv_Pin > 0.1f) 
+		if (pv_Plast - pv_Pin > 0.05f) 
 		{
 			mppt_up_dn_flag = !mppt_up_dn_flag;
 		}

@@ -20,7 +20,7 @@ BattryPara_TypeDef    gMy_Battry = {
   .cutoff_Vo      	 = 10.8f, //最低电压：单位：V
 	
   .precharg_Io     	 = 0.50f, //预充电流：单位：A
-  .charging_Io       = 2.00f, //充电电流：单位：A
+  .charging_Io       = 3.00f, //充电电流：单位：A
   .floating_Io       = 0.30f, //浮充电流：单位：A
   .stop_Io           = 0.30f, //停止电流：单位：A
 
@@ -91,7 +91,7 @@ uint8_t ChargeStateCalc(BattryPara_TypeDef *bat)
 				swiStaTime = (VoTemp > bat->floating_Vo && IoTemp < bat->stop_Io) ? (swiStaTime + 1) : 0;
 				if (swiStaTime > 10)
 				{
-					bat->states_charge = charge_fault;
+					bat->states_charge = charge_float;
 				}
 				
 				if (charge_time > bat->charge_time || VoTemp < bat->cutoff_Vo) //充电超时或Vo<最低电压，视作充电故障
