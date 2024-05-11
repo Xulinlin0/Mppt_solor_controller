@@ -29,6 +29,7 @@
 
 #ifdef RTT_DEBUG
 	#include "SEGGER_RTT.h"
+	#include "SEGGER_SYSVIEW.h"
 #endif
 
 /* ---------------------- extern ----------------------- */
@@ -55,8 +56,8 @@ TaskHandle_t sStateRun_handler;
 
 // mode flag
 uint8_t	DeviceSwitch = 0;
-uint8_t	chargerMode = 1;
-uint8_t	mppt_enable = 1;
+uint8_t	chargerMode = 0;
+uint8_t	mppt_enable = 0;
 
 /*
 	[0]-Vin		Pin
@@ -124,9 +125,9 @@ void sStateInit_task_function(void *pvParameters)
 			/* 初始化pid参数 */
 			increPid_init();	
 		
-			tmr_channel_enable(TMR1,TMR_SELECT_CHANNEL_1, TRUE);	//打开TIMR1ch1，输出pwm
-			tmr_channel_enable(TMR1,TMR_SELECT_CHANNEL_1C, TRUE);	//打开TIMR1ch1，输出pwm
-			tmr_interrupt_enable(TMR1, TMR_OVF_INT, TRUE);				//打开TIMR1中断，开启PID控制
+//			tmr_channel_enable(TMR1,TMR_SELECT_CHANNEL_1, TRUE);	//打开TIMR1ch1，输出pwm
+//			tmr_channel_enable(TMR1,TMR_SELECT_CHANNEL_1C, TRUE);	//打开TIMR1ch1，输出pwm
+//			tmr_interrupt_enable(TMR1, TMR_OVF_INT, TRUE);				//打开TIMR1中断，开启PID控制
 
 //			SEGGER_RTT_printf("Iin_offset= %d,Iout_offset = %d\r\n",dac_eff.Iin_offset, dac_eff.Iout_offset);
 				
@@ -221,16 +222,26 @@ void sStateRun_task_function(void *pvParameters)
 				pid_ctrol[2].target = gMy_Battry.charge_voltage; 	 //停止电流
 				pid_ctrol[2].Output_max = gMy_Battry.charge_current; 
 			}
+			if (mppt_enable)
+			{
+				pid_ctrol[0].value = mpptmode_PVctr(1);	
+				target = pid_ctrol[0].value;//1111
+				pid_ctrol[0].Output_max = gMy_Battry.charge_current; 
+			}
 		}
 		
-		if (mppt_enable)
-		{
-			pid_ctrol[0].value = mpptmode_PVctr(1);	
-			target = pid_ctrol[0].value;//1111
-			pid_ctrol[0].Output_max = gMy_Battry.charge_current; 
-		}
+		/* debug BEGIN 调试 */
+//		if (CV_flag)
+//		{
+//			SEGGER_RTT_printf(0,RTT_CTRL_TEXT_BRIGHT_BLUE"CV");
+//		}
+//		else
+//		{
+//			SEGGER_RTT_printf(0,RTT_CTRL_TEXT_BRIGHT_BLUE"MPPT");
+//		}
+//		SEGGER_RTT_printf(0,"%f\r\n", pid_ctrol[3].target);
+		/* debug END 调试 */
 		
-		SEGGER_RTT_printf(0,"%f\r\n", pid_ctrol[3].target);
 		
 		if ((Netbutton == 0) || KEY1 == Key_Scan())	//物联网传输关闭输出或按下KEY1
 		{
@@ -256,8 +267,7 @@ void show_task_function(void *pvParameters)
 	flTstr_FirpTwo(gMy_Battry.floating_Io, datTostr[0]);
 	flTstr_FirpTwo(gMy_Battry.charging_Io, datTostr[1]);
 	flTstr_FirpTwo(gMy_Battry.precharg_Io, datTostr[2]);
-	flTstr_FirpTwo(gMy_Battry.stop_Io, datTostr[3]);
-	tiny_sprintf(uart_tx_parm, "{\\\"floating_Io\\\":%s\\,\\\"charging_Io\\\":%s\\,\\\"precharg_Io\\\":%s\\,\\\"stop_Io\\\":%s}", datTostr[0], datTostr[1], datTostr[2], datTostr[3]);
+	tiny_sprintf(uart_tx_parm, "{\\\"floating_Io\\\":%s\\,\\\"charging_Io\\\":%s\\,\\\"precharg_Io\\\":%s\\}", datTostr[0], datTostr[1], datTostr[2]);
 	esp8266_pub_data(uart_tx_parm);
 	memset(datTostr, 0, sizeof(datTostr));
 	vTaskDelay(200);
@@ -353,6 +363,9 @@ void SetupHardware()
 	
 	OLED_Init();	  		 				/* init oled */
 	
+#ifdef RTT_DEBUG
+//	SEGGER_SYSVIEW_Conf();
+#endif
 	at32_led_on(LED2);	
 }
 
@@ -368,7 +381,6 @@ void start_task_function(void *pvParameters)
 	vTaskDelete(NULL);
 	
   taskEXIT_CRITICAL(); /* exit critical */
-
 }
 
 int main(void)

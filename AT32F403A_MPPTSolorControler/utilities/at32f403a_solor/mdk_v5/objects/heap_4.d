@@ -3,6 +3,14 @@
 .\objects\heap_4.o: ..\..\..\middlewares\freertos\source\include\FreeRTOS.h
 .\objects\heap_4.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 .\objects\heap_4.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\heap_4.o: ..\..\..\project\RTT\SEGGER_SYSVIEW_FreeRTOS.h
+.\objects\heap_4.o: ..\..\..\project\RTT\SEGGER_SYSVIEW.h
+.\objects\heap_4.o: ..\..\..\project\RTT\SEGGER.h
+.\objects\heap_4.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+.\objects\heap_4.o: ..\..\..\project\RTT\Global.h
+.\objects\heap_4.o: ..\..\..\project\RTT\SEGGER_SYSVIEW_ConfDefaults.h
+.\objects\heap_4.o: ..\..\..\project\RTT\SEGGER_SYSVIEW_Conf.h
+.\objects\heap_4.o: ..\..\..\project\RTT\SEGGER_RTT_Conf.h
 .\objects\heap_4.o: ..\inc\FreeRTOSConfig.h
 .\objects\heap_4.o: ..\..\..\middlewares\freertos\source\include\projdefs.h
 .\objects\heap_4.o: ..\..\..\middlewares\freertos\source\include\portable.h

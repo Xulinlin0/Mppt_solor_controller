@@ -52,6 +52,7 @@
     extern "C" {
 #endif
 /* *INDENT-ON* */
+#include "SEGGER_SYSVIEW_FreeRTOS.h"	//SystemView to debug
 
 /* Application specific configuration options. */
 #include "FreeRTOSConfig.h"

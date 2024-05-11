@@ -3,6 +3,14 @@
 .\objects\include_port.o: ..\..\..\middlewares\freertos\source\include\FreeRTOS.h
 .\objects\include_port.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 .\objects\include_port.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\include_port.o: ..\..\..\project\RTT\SEGGER_SYSVIEW_FreeRTOS.h
+.\objects\include_port.o: ..\..\..\project\RTT\SEGGER_SYSVIEW.h
+.\objects\include_port.o: ..\..\..\project\RTT\SEGGER.h
+.\objects\include_port.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+.\objects\include_port.o: ..\..\..\project\RTT\Global.h
+.\objects\include_port.o: ..\..\..\project\RTT\SEGGER_SYSVIEW_ConfDefaults.h
+.\objects\include_port.o: ..\..\..\project\RTT\SEGGER_SYSVIEW_Conf.h
+.\objects\include_port.o: ..\..\..\project\RTT\SEGGER_RTT_Conf.h
 .\objects\include_port.o: ..\inc\FreeRTOSConfig.h
 .\objects\include_port.o: ..\..\..\middlewares\freertos\source\include\projdefs.h
 .\objects\include_port.o: ..\..\..\middlewares\freertos\source\include\portable.h

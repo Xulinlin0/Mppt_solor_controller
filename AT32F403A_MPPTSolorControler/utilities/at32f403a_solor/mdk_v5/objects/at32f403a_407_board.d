@@ -38,6 +38,14 @@
 .\objects\at32f403a_407_board.o: ..\..\..\libraries\drivers\inc\at32f403a_407_emac.h
 .\objects\at32f403a_407_board.o: ..\..\..\middlewares\freertos\source\include\FreeRTOS.h
 .\objects\at32f403a_407_board.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\at32f403a_407_board.o: ..\..\..\project\RTT\SEGGER_SYSVIEW_FreeRTOS.h
+.\objects\at32f403a_407_board.o: ..\..\..\project\RTT\SEGGER_SYSVIEW.h
+.\objects\at32f403a_407_board.o: ..\..\..\project\RTT\SEGGER.h
+.\objects\at32f403a_407_board.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+.\objects\at32f403a_407_board.o: ..\..\..\project\RTT\Global.h
+.\objects\at32f403a_407_board.o: ..\..\..\project\RTT\SEGGER_SYSVIEW_ConfDefaults.h
+.\objects\at32f403a_407_board.o: ..\..\..\project\RTT\SEGGER_SYSVIEW_Conf.h
+.\objects\at32f403a_407_board.o: ..\..\..\project\RTT\SEGGER_RTT_Conf.h
 .\objects\at32f403a_407_board.o: ..\inc\FreeRTOSConfig.h
 .\objects\at32f403a_407_board.o: ..\..\..\middlewares\freertos\source\include\projdefs.h
 .\objects\at32f403a_407_board.o: ..\..\..\middlewares\freertos\source\include\portable.h

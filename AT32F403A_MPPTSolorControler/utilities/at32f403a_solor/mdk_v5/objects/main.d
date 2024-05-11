@@ -40,6 +40,14 @@
 .\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\objects\main.o: ..\..\..\middlewares\freertos\source\include\FreeRTOS.h
 .\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\main.o: ..\..\..\project\RTT\SEGGER_SYSVIEW_FreeRTOS.h
+.\objects\main.o: ..\..\..\project\RTT\SEGGER_SYSVIEW.h
+.\objects\main.o: ..\..\..\project\RTT\SEGGER.h
+.\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+.\objects\main.o: ..\..\..\project\RTT\Global.h
+.\objects\main.o: ..\..\..\project\RTT\SEGGER_SYSVIEW_ConfDefaults.h
+.\objects\main.o: ..\..\..\project\RTT\SEGGER_SYSVIEW_Conf.h
+.\objects\main.o: ..\..\..\project\RTT\SEGGER_RTT_Conf.h
 .\objects\main.o: ..\inc\FreeRTOSConfig.h
 .\objects\main.o: ..\..\..\middlewares\freertos\source\include\projdefs.h
 .\objects\main.o: ..\..\..\middlewares\freertos\source\include\portable.h
@@ -59,6 +67,4 @@
 .\objects\main.o: ..\..\..\project\charge\charge.h
 .\objects\main.o: ..\..\..\project\ESP8266\esp8266.h
 .\objects\main.o: ..\..\..\project\RTT\SEGGER_RTT.h
-.\objects\main.o: ..\..\..\project\RTT\SEGGER_RTT_Conf.h
 .\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-.\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h

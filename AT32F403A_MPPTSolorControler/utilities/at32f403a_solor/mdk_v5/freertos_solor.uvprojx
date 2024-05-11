@@ -488,6 +488,16 @@
               <FileType>1</FileType>
               <FilePath>..\..\..\project\RTT\SEGGER_RTT_printf.c</FilePath>
             </File>
+            <File>
+              <FileName>SEGGER_SYSVIEW.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\project\RTT\SEGGER_SYSVIEW.c</FilePath>
+            </File>
+            <File>
+              <FileName>SEGGER_SYSVIEW_FreeRTOS.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\project\RTT\SEGGER_SYSVIEW_FreeRTOS.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -1178,6 +1188,16 @@
               <FileName>SEGGER_RTT_printf.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\..\project\RTT\SEGGER_RTT_printf.c</FilePath>
+            </File>
+            <File>
+              <FileName>SEGGER_SYSVIEW.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\project\RTT\SEGGER_SYSVIEW.c</FilePath>
+            </File>
+            <File>
+              <FileName>SEGGER_SYSVIEW_FreeRTOS.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\project\RTT\SEGGER_SYSVIEW_FreeRTOS.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -1870,6 +1890,16 @@
               <FileType>1</FileType>
               <FilePath>..\..\..\project\RTT\SEGGER_RTT_printf.c</FilePath>
             </File>
+            <File>
+              <FileName>SEGGER_SYSVIEW.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\project\RTT\SEGGER_SYSVIEW.c</FilePath>
+            </File>
+            <File>
+              <FileName>SEGGER_SYSVIEW_FreeRTOS.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\project\RTT\SEGGER_SYSVIEW_FreeRTOS.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -2560,6 +2590,16 @@
               <FileName>SEGGER_RTT_printf.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\..\project\RTT\SEGGER_RTT_printf.c</FilePath>
+            </File>
+            <File>
+              <FileName>SEGGER_SYSVIEW.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\project\RTT\SEGGER_SYSVIEW.c</FilePath>
+            </File>
+            <File>
+              <FileName>SEGGER_SYSVIEW_FreeRTOS.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\project\RTT\SEGGER_SYSVIEW_FreeRTOS.c</FilePath>
             </File>
           </Files>
         </Group>

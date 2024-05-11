@@ -3,6 +3,14 @@
 .\objects\event_groups.o: ..\..\..\middlewares\freertos\source\include\FreeRTOS.h
 .\objects\event_groups.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 .\objects\event_groups.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\event_groups.o: ..\..\..\project\RTT\SEGGER_SYSVIEW_FreeRTOS.h
+.\objects\event_groups.o: ..\..\..\project\RTT\SEGGER_SYSVIEW.h
+.\objects\event_groups.o: ..\..\..\project\RTT\SEGGER.h
+.\objects\event_groups.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+.\objects\event_groups.o: ..\..\..\project\RTT\Global.h
+.\objects\event_groups.o: ..\..\..\project\RTT\SEGGER_SYSVIEW_ConfDefaults.h
+.\objects\event_groups.o: ..\..\..\project\RTT\SEGGER_SYSVIEW_Conf.h
+.\objects\event_groups.o: ..\..\..\project\RTT\SEGGER_RTT_Conf.h
 .\objects\event_groups.o: ..\inc\FreeRTOSConfig.h
 .\objects\event_groups.o: ..\..\..\middlewares\freertos\source\include\projdefs.h
 .\objects\event_groups.o: ..\..\..\middlewares\freertos\source\include\portable.h

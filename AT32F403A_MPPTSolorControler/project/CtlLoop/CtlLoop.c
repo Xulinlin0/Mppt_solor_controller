@@ -266,6 +266,14 @@ void Buck_LoopControl(void)
 			
 			increPid_cal(&pid_ctrol[0]);
 			
+			if (pid_ctrol[0].Output > pid_ctrol[2].Output)
+			{
+				CV_flag = 1;
+			}
+			else
+			{
+				CV_flag = 0;
+			}
 			pid_ctrol[3].target = f_min(pid_ctrol[0].Output, pid_ctrol[2].Output);
 		}
 	} 

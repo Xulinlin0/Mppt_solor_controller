@@ -4,6 +4,14 @@
 .\objects\tasks.o: ..\..\..\middlewares\freertos\source\include\FreeRTOS.h
 .\objects\tasks.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 .\objects\tasks.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\tasks.o: ..\..\..\project\RTT\SEGGER_SYSVIEW_FreeRTOS.h
+.\objects\tasks.o: ..\..\..\project\RTT\SEGGER_SYSVIEW.h
+.\objects\tasks.o: ..\..\..\project\RTT\SEGGER.h
+.\objects\tasks.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+.\objects\tasks.o: ..\..\..\project\RTT\Global.h
+.\objects\tasks.o: ..\..\..\project\RTT\SEGGER_SYSVIEW_ConfDefaults.h
+.\objects\tasks.o: ..\..\..\project\RTT\SEGGER_SYSVIEW_Conf.h
+.\objects\tasks.o: ..\..\..\project\RTT\SEGGER_RTT_Conf.h
 .\objects\tasks.o: ..\inc\FreeRTOSConfig.h
 .\objects\tasks.o: ..\..\..\middlewares\freertos\source\include\projdefs.h
 .\objects\tasks.o: ..\..\..\middlewares\freertos\source\include\portable.h

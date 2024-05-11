@@ -39,6 +39,14 @@
 .\objects\spi.o: ..\..\..\libraries\drivers\inc\at32f403a_407_emac.h
 .\objects\spi.o: ..\..\..\middlewares\freertos\source\include\FreeRTOS.h
 .\objects\spi.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\spi.o: ..\..\..\project\RTT\SEGGER_SYSVIEW_FreeRTOS.h
+.\objects\spi.o: ..\..\..\project\RTT\SEGGER_SYSVIEW.h
+.\objects\spi.o: ..\..\..\project\RTT\SEGGER.h
+.\objects\spi.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+.\objects\spi.o: ..\..\..\project\RTT\Global.h
+.\objects\spi.o: ..\..\..\project\RTT\SEGGER_SYSVIEW_ConfDefaults.h
+.\objects\spi.o: ..\..\..\project\RTT\SEGGER_SYSVIEW_Conf.h
+.\objects\spi.o: ..\..\..\project\RTT\SEGGER_RTT_Conf.h
 .\objects\spi.o: ..\inc\FreeRTOSConfig.h
 .\objects\spi.o: ..\..\..\middlewares\freertos\source\include\projdefs.h
 .\objects\spi.o: ..\..\..\middlewares\freertos\source\include\portable.h

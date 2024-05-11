@@ -17,6 +17,8 @@
 ".\objects\oled.o"
 ".\objects\segger_rtt.o"
 ".\objects\segger_rtt_printf.o"
+".\objects\segger_sysview.o"
+".\objects\segger_sysview_freertos.o"
 ".\objects\at32f403a_407_acc.o"
 ".\objects\at32f403a_407_adc.o"
 ".\objects\at32f403a_407_bpr.o"

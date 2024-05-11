@@ -20,14 +20,14 @@ const char* WIFIASSWORD = "13929385084?ljl";
 const char* WIFI = "9B305";
 const char* WIFIASSWORD = "9b305305";
 
-const char* ClintID = "k115qjMhgNj.mpptSolorDevice|securemode=2\\,signmethod=hmacsha256\\,timestamp=1711994850221|";
-const char* username = "mpptSolorDevice&k115qjMhgNj";
-const char* passwd = "c2ad08c170dfbfd7a5e8da903dd30f1a4213fa5c097caa148cee397a5823d8ff";
+const char* ClintID = "k17tivpPKoi.mpptSolorDevice|securemode=2\\,signmethod=hmacsha256\\,timestamp=1715418061203|";
+const char* username = "mpptSolorDevice&k17tivpPKoi";
+const char* passwd = "6251d922d6e23d2fa050f446b6e061b2c09493b757736990077b56201f08bbaf";
 
-const char* Url = "iot-06z00iiox1s5y49.mqtt.iothub.aliyuncs.com";
+const char* Url = "iot-06z00hz4jtn6ul5.mqtt.iothub.aliyuncs.com";
 
 //const char* pubtopic = "/sys/k115qjMhgNj/mpptSolorDevice/thing/event/property/post";
-const char* subtopic = "/sys/k115qjMhgNj/mpptSolorDevice/thing/event/property/post_reply";
+const char* subtopic = "/sys/k17tivpPKoi/mpptSolorDevice/thing/event/property/post_reply";
 
 // rec then find parms
 const char* mqtt_rx_parms_pos = "params\":{\"";	//这里最开始写错了, 白白找了好久的问题！
@@ -36,7 +36,8 @@ char* g_identifier = 0;
 char* g_iden_parm = 0;
 
 // pub format
-const char* mqtt_tx_pub_pre = "AT+MQTTPUB=0,\"/sys/k115qjMhgNj/mpptSolorDevice/thing/event/property/post\",\"{\\\"params\\\":";
+const char* mqtt_tx_pub_pre = "AT+MQTTPUB=0,\"/sys/k17tivpPKoi/mpptSolorDevice/thing/event/property/post\",\"{\\\"params\\\":";
+
 const char* mqtt_tx_pub_end = "\\,\\\"version\\\":\\\"1.0.0\\\"}\",0,0\r\n";
 
 /* usart1 datebuf param */
@@ -255,9 +256,9 @@ void esp8266_sub_getparms(void)
 		{
 			pid_ctrol[2].target = strTof_FirpTwo(g_iden_parm);
 		}
-		else if (0 == strcmp(g_identifier, "Vin_value"))
+		else if (0 == strcmp(g_identifier, "Iout_value"))
 		{
-			pid_ctrol[0].value = strTof_FirpTwo(g_iden_parm);
+			pid_ctrol[3].target = strTof_FirpTwo(g_iden_parm);
 		}
 		else if (0 == strcmp(g_identifier, "floating_Io"))
 		{
