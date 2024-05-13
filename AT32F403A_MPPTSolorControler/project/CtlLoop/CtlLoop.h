@@ -84,11 +84,9 @@ Ki 0.00689
 */
 
 //Vout	开关f：100KHZ	输出：pwm
-/*
-#define VOUT_KP			0.05f			
-#define VOUT_KI		  0.008f
-#define VOUT_KD			0.00f
-*/
+#define VOUT_KP_S		0.05f			
+#define VOUT_KI_S		0.008f
+#define VOUT_KD_S		0.00f
 
 //Vin		开关f：100KHZ	输出：Iout
 #define VIN_KP		  0.32f		
@@ -184,7 +182,8 @@ int8_t ExcursionCheck(void);
 void ADCSample(uint8_t Iopen);
 void increPid_init(void);
 
-void Buck_LoopControl(void); //环路控制
+void Buck_LoopControl_charger(void); //电池充电环路控制
+void Buck_LoopControl_supply(void); //可调直流源输出环路控制
 uint8_t LoopFaultCheck(uint8_t Iopen, uint8_t cnt);//环路保护
 uint8_t LoopFaultBack(uint8_t err, uint8_t cnt);//环路检测恢复
 	

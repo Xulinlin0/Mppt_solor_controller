@@ -2,8 +2,8 @@
 #include "CtlLoop.h"
 #include "at32f403a_407_board.h"
 
-/* ---------------------- global ----------------------- */
-
+/* ---------------------- extern ----------------------- */
+extern uint8_t	chargerMode;
 
 /* ----------------------  function ------------------ */
 void TMR1_Init(void)
@@ -100,8 +100,15 @@ void TMR1_OVF_TMR10_IRQHandler(void)
  /* 判断溢出标志位是否置起 */
  if(tmr_flag_get(TMR1, TMR_OVF_FLAG) == SET)
  {
-	 Buck_LoopControl();
-	
+	 if (chargerMode)
+	 {
+			Buck_LoopControl_charger();
+	 }
+	 else
+	 {
+			Buck_LoopControl_supply();
+	 }
+	 
 	 tmr_flag_clear(TMR1, TMR_OVF_FLAG);
  }
 }

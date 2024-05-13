@@ -9,6 +9,7 @@ extern pid_struct pid_ctrol[4];
 extern uint8_t	chargerMode;
 extern uint8_t	mppt_enable;
 extern BattryPara_TypeDef  gMy_Battry;
+extern uint8_t 	Supply_CV_flag;
 
 /* ================ global ================ */
 /* esp8266 config aliyun param */
@@ -177,7 +178,7 @@ uint8_t esp8266_Init(void)
 	}
 	
 	memset(uart_rx_buf,0,sizeof(uart_rx_buf));
-	Esp8266_send_data((u8*)"AT+CWMODE=1\r\n", 14);
+	Esp8266_send_data((u8*)"AT+CWMODE=1\r\n", 14);//STAģʽ
 	dwt_delay_ms(100);
 	if(strcmp(uart_rx_buf,"OK"))
 	{
@@ -251,14 +252,17 @@ void esp8266_sub_getparms(void)
 		else if (0 == strcmp(g_identifier, "chargerMode"))
 		{
 			chargerMode = g_iden_parm[0] - '0';
+			Netbutton = 0;
 		}
 		else if (0 == strcmp(g_identifier, "Vout_value"))
 		{
 			pid_ctrol[2].target = strTof_FirpTwo(g_iden_parm);
+			Supply_CV_flag = 1;
 		}
 		else if (0 == strcmp(g_identifier, "Iout_value"))
 		{
 			pid_ctrol[3].target = strTof_FirpTwo(g_iden_parm);
+			Supply_CV_flag = 0;
 		}
 		else if (0 == strcmp(g_identifier, "floating_Io"))
 		{

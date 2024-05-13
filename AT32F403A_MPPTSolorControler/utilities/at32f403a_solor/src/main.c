@@ -56,7 +56,7 @@ TaskHandle_t sStateRun_handler;
 
 // mode flag
 uint8_t	DeviceSwitch = 0;
-uint8_t	chargerMode = 0;
+uint8_t	chargerMode = 1;
 uint8_t	mppt_enable = 0;
 
 /*
@@ -125,9 +125,9 @@ void sStateInit_task_function(void *pvParameters)
 			/* 初始化pid参数 */
 			increPid_init();	
 		
-//			tmr_channel_enable(TMR1,TMR_SELECT_CHANNEL_1, TRUE);	//打开TIMR1ch1，输出pwm
-//			tmr_channel_enable(TMR1,TMR_SELECT_CHANNEL_1C, TRUE);	//打开TIMR1ch1，输出pwm
-//			tmr_interrupt_enable(TMR1, TMR_OVF_INT, TRUE);				//打开TIMR1中断，开启PID控制
+			tmr_channel_enable(TMR1,TMR_SELECT_CHANNEL_1, TRUE);	//打开TIMR1ch1，输出pwm
+			tmr_channel_enable(TMR1,TMR_SELECT_CHANNEL_1C, TRUE);	//打开TIMR1ch1，输出pwm
+			tmr_interrupt_enable(TMR1, TMR_OVF_INT, TRUE);				//打开TIMR1中断，开启PID控制
 
 //			SEGGER_RTT_printf("Iin_offset= %d,Iout_offset = %d\r\n",dac_eff.Iin_offset, dac_eff.Iout_offset);
 				
@@ -222,6 +222,7 @@ void sStateRun_task_function(void *pvParameters)
 				pid_ctrol[2].target = gMy_Battry.charge_voltage; 	 //停止电流
 				pid_ctrol[2].Output_max = gMy_Battry.charge_current; 
 			}
+			
 			if (mppt_enable)
 			{
 				pid_ctrol[0].value = mpptmode_PVctr(1);	
