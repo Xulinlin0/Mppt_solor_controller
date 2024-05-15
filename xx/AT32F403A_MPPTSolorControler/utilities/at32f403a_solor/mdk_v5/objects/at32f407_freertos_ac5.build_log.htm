@@ -1,0 +1,785 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: ¦ÌVision V5.38.0.0
+Copyright (C) 2022 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: xxx xxx, xxx, LIC=TIVNB-24VBS-8TK3P-MGN30-GC9LN-MVJA7
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Plus  Version: 5.38.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 6 (build 750)
+Assembler:       Armasm.exe V5.06 update 6 (build 750)
+Linker/Locator:  ArmLink.exe V5.06 update 6 (build 750)
+Library Manager: ArmAr.exe V5.06 update 6 (build 750)
+Hex Converter:   FromElf.exe V5.06 update 6 (build 750)
+CPU DLL:         SARMCM3.DLL V5.38.0.0
+Dialog DLL:      DCM.DLL V1.17.5.0
+Target DLL:      UL2CM3.DLL V1.164.8.0
+Dialog DLL:      TCM.DLL V1.56.4.0
+ 
+<h2>Project:</h2>
+D:\desktop\AT32F403A_MPPTSolorControler\utilities\at32f403a_solor\mdk_v5\freertos_solor.uvprojx
+Project File Date:  04/05/2024
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 6 (build 750)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+Build target 'at_start_f407_ac5'
+compiling main.c...
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(287): error:  #67: expected a "}"
+      ADC1_2_IRQn                 = 18,     /*!< adc1 and adc2 global interrupt                       */
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(348): warning:  #12-D: parsing restarts here after previous syntax error
+  } IRQn_Type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(161): error:  #67: expected a "}"
+    CRM_DMA1_PERIPH_CLOCK                  = MAKE_VALUE(0x14, 0),  /*!< dma1 periph clock */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(221): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_clock_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(282): error:  #67: expected a "}"
+    CRM_EMAC_PERIPH_RESET                  = MAKE_VALUE(0x28, 14), /*!< emac periph reset */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(334): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_reset_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\src\main.c(12): error:  #5: cannot open source input file "timer.h": No such file or directory
+  #include "timer.h"
+..\src\main.c: 3 warnings, 6 errors
+compiling timer.c...
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(287): error:  #67: expected a "}"
+      ADC1_2_IRQn                 = 18,     /*!< adc1 and adc2 global interrupt                       */
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(348): warning:  #12-D: parsing restarts here after previous syntax error
+  } IRQn_Type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(161): error:  #67: expected a "}"
+    CRM_DMA1_PERIPH_CLOCK                  = MAKE_VALUE(0x14, 0),  /*!< dma1 periph clock */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(221): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_clock_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(282): error:  #67: expected a "}"
+    CRM_EMAC_PERIPH_RESET                  = MAKE_VALUE(0x28, 14), /*!< emac periph reset */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(334): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_reset_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\project\TIMR\timer.c(2): error:  #5: cannot open source input file "CtlLoop.h": No such file or directory
+  #include "CtlLoop.h"
+..\..\..\project\TIMR\timer.c: 3 warnings, 6 errors
+compiling include_port.c...
+compiling soft_iic.c...
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(287): error:  #67: expected a "}"
+      ADC1_2_IRQn                 = 18,     /*!< adc1 and adc2 global interrupt                       */
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(348): warning:  #12-D: parsing restarts here after previous syntax error
+  } IRQn_Type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(161): error:  #67: expected a "}"
+    CRM_DMA1_PERIPH_CLOCK                  = MAKE_VALUE(0x14, 0),  /*!< dma1 periph clock */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(221): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_clock_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(282): error:  #67: expected a "}"
+    CRM_EMAC_PERIPH_RESET                  = MAKE_VALUE(0x28, 14), /*!< emac periph reset */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(334): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_reset_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\project\I2C\soft_iic.c: 3 warnings, 5 errors
+compiling at32f403a_407_board.c...
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(287): error:  #67: expected a "}"
+      ADC1_2_IRQn                 = 18,     /*!< adc1 and adc2 global interrupt                       */
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(348): warning:  #12-D: parsing restarts here after previous syntax error
+  } IRQn_Type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(161): error:  #67: expected a "}"
+    CRM_DMA1_PERIPH_CLOCK                  = MAKE_VALUE(0x14, 0),  /*!< dma1 periph clock */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(221): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_clock_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(282): error:  #67: expected a "}"
+    CRM_EMAC_PERIPH_RESET                  = MAKE_VALUE(0x28, 14), /*!< emac periph reset */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(334): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_reset_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\project\at32f403a_407_board\at32f403a_407_board.c(248): error:  #268: declaration may not appear after executable statement in block
+  	uint32_t temp = DWT->CYCCNT;
+..\..\..\project\at32f403a_407_board\at32f403a_407_board.c(273): error:  #268: declaration may not appear after executable statement in block
+  	uint32_t temp = DWT->CYCCNT;
+..\..\..\project\at32f403a_407_board\at32f403a_407_board.c: 3 warnings, 7 errors
+compiling ina226.c...
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(287): error:  #67: expected a "}"
+      ADC1_2_IRQn                 = 18,     /*!< adc1 and adc2 global interrupt                       */
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(348): warning:  #12-D: parsing restarts here after previous syntax error
+  } IRQn_Type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(161): error:  #67: expected a "}"
+    CRM_DMA1_PERIPH_CLOCK                  = MAKE_VALUE(0x14, 0),  /*!< dma1 periph clock */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(221): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_clock_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(282): error:  #67: expected a "}"
+    CRM_EMAC_PERIPH_RESET                  = MAKE_VALUE(0x28, 14), /*!< emac periph reset */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(334): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_reset_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\project\ina226\ina226.c(2): error:  #5: cannot open source input file "soft_iic.h": No such file or directory
+  #include "soft_iic.h"
+..\..\..\project\ina226\ina226.c: 3 warnings, 6 errors
+compiling spi.c...
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(287): error:  #67: expected a "}"
+      ADC1_2_IRQn                 = 18,     /*!< adc1 and adc2 global interrupt                       */
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(348): warning:  #12-D: parsing restarts here after previous syntax error
+  } IRQn_Type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(161): error:  #67: expected a "}"
+    CRM_DMA1_PERIPH_CLOCK                  = MAKE_VALUE(0x14, 0),  /*!< dma1 periph clock */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(221): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_clock_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(282): error:  #67: expected a "}"
+    CRM_EMAC_PERIPH_RESET                  = MAKE_VALUE(0x28, 14), /*!< emac periph reset */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(334): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_reset_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\project\SPI\spi.c: 3 warnings, 5 errors
+compiling charge.c...
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(287): error:  #67: expected a "}"
+      ADC1_2_IRQn                 = 18,     /*!< adc1 and adc2 global interrupt                       */
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(348): warning:  #12-D: parsing restarts here after previous syntax error
+  } IRQn_Type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(161): error:  #67: expected a "}"
+    CRM_DMA1_PERIPH_CLOCK                  = MAKE_VALUE(0x14, 0),  /*!< dma1 periph clock */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(221): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_clock_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(282): error:  #67: expected a "}"
+    CRM_EMAC_PERIPH_RESET                  = MAKE_VALUE(0x28, 14), /*!< emac periph reset */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(334): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_reset_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\project\charge\charge.c(2): error:  #5: cannot open source input file "CtlLoop.h": No such file or directory
+  #include "CtlLoop.h"
+..\..\..\project\charge\charge.c: 3 warnings, 6 errors
+compiling mppt.c...
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(287): error:  #67: expected a "}"
+      ADC1_2_IRQn                 = 18,     /*!< adc1 and adc2 global interrupt                       */
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(348): warning:  #12-D: parsing restarts here after previous syntax error
+  } IRQn_Type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(161): error:  #67: expected a "}"
+    CRM_DMA1_PERIPH_CLOCK                  = MAKE_VALUE(0x14, 0),  /*!< dma1 periph clock */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(221): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_clock_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(282): error:  #67: expected a "}"
+    CRM_EMAC_PERIPH_RESET                  = MAKE_VALUE(0x28, 14), /*!< emac periph reset */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(334): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_reset_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\project\mppt\mppt.c(2): error:  #5: cannot open source input file "filter.h": No such file or directory
+  #include "filter.h"
+..\..\..\project\mppt\mppt.c: 3 warnings, 6 errors
+compiling lcd.c...
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(287): error:  #67: expected a "}"
+      ADC1_2_IRQn                 = 18,     /*!< adc1 and adc2 global interrupt                       */
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(348): warning:  #12-D: parsing restarts here after previous syntax error
+  } IRQn_Type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(161): error:  #67: expected a "}"
+    CRM_DMA1_PERIPH_CLOCK                  = MAKE_VALUE(0x14, 0),  /*!< dma1 periph clock */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(221): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_clock_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(282): error:  #67: expected a "}"
+    CRM_EMAC_PERIPH_RESET                  = MAKE_VALUE(0x28, 14), /*!< emac periph reset */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(334): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_reset_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\project\LCD\lcd.c(2): error:  #5: cannot open source input file "spi.h": No such file or directory
+  #include "spi.h"
+..\..\..\project\LCD\lcd.c: 3 warnings, 6 errors
+compiling CtlLoop.c...
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(287): error:  #67: expected a "}"
+      ADC1_2_IRQn                 = 18,     /*!< adc1 and adc2 global interrupt                       */
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(348): warning:  #12-D: parsing restarts here after previous syntax error
+  } IRQn_Type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(161): error:  #67: expected a "}"
+    CRM_DMA1_PERIPH_CLOCK                  = MAKE_VALUE(0x14, 0),  /*!< dma1 periph clock */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(221): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_clock_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(282): error:  #67: expected a "}"
+    CRM_EMAC_PERIPH_RESET                  = MAKE_VALUE(0x28, 14), /*!< emac periph reset */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(334): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_reset_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\project\CtlLoop\CtlLoop.c(2): error:  #5: cannot open source input file "adc.h": No such file or directory
+  #include "adc.h"
+..\..\..\project\CtlLoop\CtlLoop.c: 3 warnings, 6 errors
+compiling esp8266.c...
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(287): error:  #67: expected a "}"
+      ADC1_2_IRQn                 = 18,     /*!< adc1 and adc2 global interrupt                       */
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(348): warning:  #12-D: parsing restarts here after previous syntax error
+  } IRQn_Type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(161): error:  #67: expected a "}"
+    CRM_DMA1_PERIPH_CLOCK                  = MAKE_VALUE(0x14, 0),  /*!< dma1 periph clock */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(221): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_clock_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(282): error:  #67: expected a "}"
+    CRM_EMAC_PERIPH_RESET                  = MAKE_VALUE(0x28, 14), /*!< emac periph reset */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(334): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_reset_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\project\ESP8266\esp8266.c(3): error:  #5: cannot open source input file "CtlLoop.h": No such file or directory
+  #include "CtlLoop.h"
+..\..\..\project\ESP8266\esp8266.c: 3 warnings, 6 errors
+compiling at32f403a_407_acc.c...
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(287): error:  #67: expected a "}"
+      ADC1_2_IRQn                 = 18,     /*!< adc1 and adc2 global interrupt                       */
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(348): warning:  #12-D: parsing restarts here after previous syntax error
+  } IRQn_Type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(161): error:  #67: expected a "}"
+    CRM_DMA1_PERIPH_CLOCK                  = MAKE_VALUE(0x14, 0),  /*!< dma1 periph clock */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(221): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_clock_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(282): error:  #67: expected a "}"
+    CRM_EMAC_PERIPH_RESET                  = MAKE_VALUE(0x28, 14), /*!< emac periph reset */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(334): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_reset_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\drivers\src\at32f403a_407_acc.c: 3 warnings, 5 errors
+compiling adc.c...
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(287): error:  #67: expected a "}"
+      ADC1_2_IRQn                 = 18,     /*!< adc1 and adc2 global interrupt                       */
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(348): warning:  #12-D: parsing restarts here after previous syntax error
+  } IRQn_Type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(161): error:  #67: expected a "}"
+    CRM_DMA1_PERIPH_CLOCK                  = MAKE_VALUE(0x14, 0),  /*!< dma1 periph clock */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(221): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_clock_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(282): error:  #67: expected a "}"
+    CRM_EMAC_PERIPH_RESET                  = MAKE_VALUE(0x28, 14), /*!< emac periph reset */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(334): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_reset_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\project\ADC\adc.c(31): error:  #268: declaration may not appear after executable statement in block
+  	dma_init_type dma_init_struct;
+..\..\..\project\ADC\adc.c(52): error:  #268: declaration may not appear after executable statement in block
+  	adc_base_config_type adc_base_struct;
+..\..\..\project\ADC\adc.c: 3 warnings, 7 errors
+compiling GUI.c...
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(287): error:  #67: expected a "}"
+      ADC1_2_IRQn                 = 18,     /*!< adc1 and adc2 global interrupt                       */
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(348): warning:  #12-D: parsing restarts here after previous syntax error
+  } IRQn_Type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(161): error:  #67: expected a "}"
+    CRM_DMA1_PERIPH_CLOCK                  = MAKE_VALUE(0x14, 0),  /*!< dma1 periph clock */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(221): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_clock_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(282): error:  #67: expected a "}"
+    CRM_EMAC_PERIPH_RESET                  = MAKE_VALUE(0x28, 14), /*!< emac periph reset */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(334): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_reset_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\project\LCD\GUI.c: 3 warnings, 5 errors
+compiling at32f403a_407_adc.c...
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(287): error:  #67: expected a "}"
+      ADC1_2_IRQn                 = 18,     /*!< adc1 and adc2 global interrupt                       */
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(348): warning:  #12-D: parsing restarts here after previous syntax error
+  } IRQn_Type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(161): error:  #67: expected a "}"
+    CRM_DMA1_PERIPH_CLOCK                  = MAKE_VALUE(0x14, 0),  /*!< dma1 periph clock */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(221): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_clock_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(282): error:  #67: expected a "}"
+    CRM_EMAC_PERIPH_RESET                  = MAKE_VALUE(0x28, 14), /*!< emac periph reset */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(334): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_reset_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\drivers\src\at32f403a_407_adc.c: 3 warnings, 5 errors
+compiling at32f403a_407_bpr.c...
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(287): error:  #67: expected a "}"
+      ADC1_2_IRQn                 = 18,     /*!< adc1 and adc2 global interrupt                       */
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(348): warning:  #12-D: parsing restarts here after previous syntax error
+  } IRQn_Type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(161): error:  #67: expected a "}"
+    CRM_DMA1_PERIPH_CLOCK                  = MAKE_VALUE(0x14, 0),  /*!< dma1 periph clock */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(221): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_clock_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(282): error:  #67: expected a "}"
+    CRM_EMAC_PERIPH_RESET                  = MAKE_VALUE(0x28, 14), /*!< emac periph reset */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(334): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_reset_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\drivers\src\at32f403a_407_bpr.c: 3 warnings, 5 errors
+compiling at32f403a_407_can.c...
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(287): error:  #67: expected a "}"
+      ADC1_2_IRQn                 = 18,     /*!< adc1 and adc2 global interrupt                       */
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(348): warning:  #12-D: parsing restarts here after previous syntax error
+  } IRQn_Type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(161): error:  #67: expected a "}"
+    CRM_DMA1_PERIPH_CLOCK                  = MAKE_VALUE(0x14, 0),  /*!< dma1 periph clock */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(221): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_clock_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(282): error:  #67: expected a "}"
+    CRM_EMAC_PERIPH_RESET                  = MAKE_VALUE(0x28, 14), /*!< emac periph reset */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(334): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_reset_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\drivers\src\at32f403a_407_can.c: 3 warnings, 5 errors
+compiling at32f403a_407_crc.c...
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(287): error:  #67: expected a "}"
+      ADC1_2_IRQn                 = 18,     /*!< adc1 and adc2 global interrupt                       */
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(348): warning:  #12-D: parsing restarts here after previous syntax error
+  } IRQn_Type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(161): error:  #67: expected a "}"
+    CRM_DMA1_PERIPH_CLOCK                  = MAKE_VALUE(0x14, 0),  /*!< dma1 periph clock */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(221): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_clock_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(282): error:  #67: expected a "}"
+    CRM_EMAC_PERIPH_RESET                  = MAKE_VALUE(0x28, 14), /*!< emac periph reset */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(334): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_reset_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\drivers\src\at32f403a_407_crc.c: 3 warnings, 5 errors
+compiling at32f403a_407_crm.c...
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(287): error:  #67: expected a "}"
+      ADC1_2_IRQn                 = 18,     /*!< adc1 and adc2 global interrupt                       */
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(348): warning:  #12-D: parsing restarts here after previous syntax error
+  } IRQn_Type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(161): error:  #67: expected a "}"
+    CRM_DMA1_PERIPH_CLOCK                  = MAKE_VALUE(0x14, 0),  /*!< dma1 periph clock */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(221): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_clock_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(282): error:  #67: expected a "}"
+    CRM_EMAC_PERIPH_RESET                  = MAKE_VALUE(0x28, 14), /*!< emac periph reset */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(334): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_reset_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\drivers\src\at32f403a_407_crm.c: 3 warnings, 5 errors
+compiling at32f403a_407_dac.c...
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(287): error:  #67: expected a "}"
+      ADC1_2_IRQn                 = 18,     /*!< adc1 and adc2 global interrupt                       */
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(348): warning:  #12-D: parsing restarts here after previous syntax error
+  } IRQn_Type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(161): error:  #67: expected a "}"
+    CRM_DMA1_PERIPH_CLOCK                  = MAKE_VALUE(0x14, 0),  /*!< dma1 periph clock */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(221): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_clock_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(282): error:  #67: expected a "}"
+    CRM_EMAC_PERIPH_RESET                  = MAKE_VALUE(0x28, 14), /*!< emac periph reset */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(334): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_reset_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\drivers\src\at32f403a_407_dac.c: 3 warnings, 5 errors
+compiling at32f403a_407_debug.c...
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(287): error:  #67: expected a "}"
+      ADC1_2_IRQn                 = 18,     /*!< adc1 and adc2 global interrupt                       */
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(348): warning:  #12-D: parsing restarts here after previous syntax error
+  } IRQn_Type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(161): error:  #67: expected a "}"
+    CRM_DMA1_PERIPH_CLOCK                  = MAKE_VALUE(0x14, 0),  /*!< dma1 periph clock */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(221): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_clock_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(282): error:  #67: expected a "}"
+    CRM_EMAC_PERIPH_RESET                  = MAKE_VALUE(0x28, 14), /*!< emac periph reset */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(334): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_reset_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\drivers\src\at32f403a_407_debug.c: 3 warnings, 5 errors
+compiling at32f403a_407_dma.c...
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(287): error:  #67: expected a "}"
+      ADC1_2_IRQn                 = 18,     /*!< adc1 and adc2 global interrupt                       */
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(348): warning:  #12-D: parsing restarts here after previous syntax error
+  } IRQn_Type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(161): error:  #67: expected a "}"
+    CRM_DMA1_PERIPH_CLOCK                  = MAKE_VALUE(0x14, 0),  /*!< dma1 periph clock */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(221): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_clock_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(282): error:  #67: expected a "}"
+    CRM_EMAC_PERIPH_RESET                  = MAKE_VALUE(0x28, 14), /*!< emac periph reset */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(334): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_reset_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\drivers\src\at32f403a_407_dma.c: 3 warnings, 5 errors
+compiling at32f403a_407_emac.c...
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(287): error:  #67: expected a "}"
+      ADC1_2_IRQn                 = 18,     /*!< adc1 and adc2 global interrupt                       */
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(348): warning:  #12-D: parsing restarts here after previous syntax error
+  } IRQn_Type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(161): error:  #67: expected a "}"
+    CRM_DMA1_PERIPH_CLOCK                  = MAKE_VALUE(0x14, 0),  /*!< dma1 periph clock */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(221): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_clock_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(282): error:  #67: expected a "}"
+    CRM_EMAC_PERIPH_RESET                  = MAKE_VALUE(0x28, 14), /*!< emac periph reset */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(334): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_reset_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\drivers\src\at32f403a_407_emac.c(61): error:  #20: identifier "CRM_EMAC_PERIPH_RESET" is undefined
+    crm_periph_reset(CRM_EMAC_PERIPH_RESET, TRUE);
+..\..\..\libraries\drivers\src\at32f403a_407_emac.c: 3 warnings, 6 errors
+compiling at32f403a_407_exint.c...
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(287): error:  #67: expected a "}"
+      ADC1_2_IRQn                 = 18,     /*!< adc1 and adc2 global interrupt                       */
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(348): warning:  #12-D: parsing restarts here after previous syntax error
+  } IRQn_Type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(161): error:  #67: expected a "}"
+    CRM_DMA1_PERIPH_CLOCK                  = MAKE_VALUE(0x14, 0),  /*!< dma1 periph clock */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(221): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_clock_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(282): error:  #67: expected a "}"
+    CRM_EMAC_PERIPH_RESET                  = MAKE_VALUE(0x28, 14), /*!< emac periph reset */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(334): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_reset_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\drivers\src\at32f403a_407_exint.c: 3 warnings, 5 errors
+compiling at32f403a_407_flash.c...
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(287): error:  #67: expected a "}"
+      ADC1_2_IRQn                 = 18,     /*!< adc1 and adc2 global interrupt                       */
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(348): warning:  #12-D: parsing restarts here after previous syntax error
+  } IRQn_Type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(161): error:  #67: expected a "}"
+    CRM_DMA1_PERIPH_CLOCK                  = MAKE_VALUE(0x14, 0),  /*!< dma1 periph clock */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(221): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_clock_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(282): error:  #67: expected a "}"
+    CRM_EMAC_PERIPH_RESET                  = MAKE_VALUE(0x28, 14), /*!< emac periph reset */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(334): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_reset_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\drivers\src\at32f403a_407_flash.c: 3 warnings, 5 errors
+compiling at32f403a_407_gpio.c...
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(287): error:  #67: expected a "}"
+      ADC1_2_IRQn                 = 18,     /*!< adc1 and adc2 global interrupt                       */
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(348): warning:  #12-D: parsing restarts here after previous syntax error
+  } IRQn_Type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(161): error:  #67: expected a "}"
+    CRM_DMA1_PERIPH_CLOCK                  = MAKE_VALUE(0x14, 0),  /*!< dma1 periph clock */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(221): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_clock_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(282): error:  #67: expected a "}"
+    CRM_EMAC_PERIPH_RESET                  = MAKE_VALUE(0x28, 14), /*!< emac periph reset */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(334): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_reset_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\drivers\src\at32f403a_407_gpio.c: 3 warnings, 5 errors
+compiling at32f403a_407_i2c.c...
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(287): error:  #67: expected a "}"
+      ADC1_2_IRQn                 = 18,     /*!< adc1 and adc2 global interrupt                       */
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(348): warning:  #12-D: parsing restarts here after previous syntax error
+  } IRQn_Type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(161): error:  #67: expected a "}"
+    CRM_DMA1_PERIPH_CLOCK                  = MAKE_VALUE(0x14, 0),  /*!< dma1 periph clock */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(221): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_clock_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(282): error:  #67: expected a "}"
+    CRM_EMAC_PERIPH_RESET                  = MAKE_VALUE(0x28, 14), /*!< emac periph reset */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(334): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_reset_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\drivers\src\at32f403a_407_i2c.c: 3 warnings, 5 errors
+compiling at32f403a_407_misc.c...
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(287): error:  #67: expected a "}"
+      ADC1_2_IRQn                 = 18,     /*!< adc1 and adc2 global interrupt                       */
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(348): warning:  #12-D: parsing restarts here after previous syntax error
+  } IRQn_Type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(161): error:  #67: expected a "}"
+    CRM_DMA1_PERIPH_CLOCK                  = MAKE_VALUE(0x14, 0),  /*!< dma1 periph clock */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(221): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_clock_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(282): error:  #67: expected a "}"
+    CRM_EMAC_PERIPH_RESET                  = MAKE_VALUE(0x28, 14), /*!< emac periph reset */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(334): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_reset_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\drivers\src\at32f403a_407_misc.c: 3 warnings, 5 errors
+compiling at32f403a_407_pwc.c...
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(287): error:  #67: expected a "}"
+      ADC1_2_IRQn                 = 18,     /*!< adc1 and adc2 global interrupt                       */
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(348): warning:  #12-D: parsing restarts here after previous syntax error
+  } IRQn_Type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(161): error:  #67: expected a "}"
+    CRM_DMA1_PERIPH_CLOCK                  = MAKE_VALUE(0x14, 0),  /*!< dma1 periph clock */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(221): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_clock_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(282): error:  #67: expected a "}"
+    CRM_EMAC_PERIPH_RESET                  = MAKE_VALUE(0x28, 14), /*!< emac periph reset */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(334): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_reset_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\drivers\src\at32f403a_407_pwc.c: 3 warnings, 5 errors
+compiling at32f403a_407_rtc.c...
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(287): error:  #67: expected a "}"
+      ADC1_2_IRQn                 = 18,     /*!< adc1 and adc2 global interrupt                       */
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(348): warning:  #12-D: parsing restarts here after previous syntax error
+  } IRQn_Type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(161): error:  #67: expected a "}"
+    CRM_DMA1_PERIPH_CLOCK                  = MAKE_VALUE(0x14, 0),  /*!< dma1 periph clock */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(221): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_clock_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(282): error:  #67: expected a "}"
+    CRM_EMAC_PERIPH_RESET                  = MAKE_VALUE(0x28, 14), /*!< emac periph reset */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(334): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_reset_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\drivers\src\at32f403a_407_rtc.c: 3 warnings, 5 errors
+compiling at32f403a_407_sdio.c...
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(287): error:  #67: expected a "}"
+      ADC1_2_IRQn                 = 18,     /*!< adc1 and adc2 global interrupt                       */
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(348): warning:  #12-D: parsing restarts here after previous syntax error
+  } IRQn_Type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(161): error:  #67: expected a "}"
+    CRM_DMA1_PERIPH_CLOCK                  = MAKE_VALUE(0x14, 0),  /*!< dma1 periph clock */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(221): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_clock_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(282): error:  #67: expected a "}"
+    CRM_EMAC_PERIPH_RESET                  = MAKE_VALUE(0x28, 14), /*!< emac periph reset */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(334): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_reset_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\drivers\src\at32f403a_407_sdio.c: 3 warnings, 5 errors
+compiling at32f403a_407_spi.c...
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(287): error:  #67: expected a "}"
+      ADC1_2_IRQn                 = 18,     /*!< adc1 and adc2 global interrupt                       */
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(348): warning:  #12-D: parsing restarts here after previous syntax error
+  } IRQn_Type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(161): error:  #67: expected a "}"
+    CRM_DMA1_PERIPH_CLOCK                  = MAKE_VALUE(0x14, 0),  /*!< dma1 periph clock */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(221): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_clock_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(282): error:  #67: expected a "}"
+    CRM_EMAC_PERIPH_RESET                  = MAKE_VALUE(0x28, 14), /*!< emac periph reset */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(334): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_reset_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\drivers\src\at32f403a_407_spi.c: 3 warnings, 5 errors
+compiling at32f403a_407_tmr.c...
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(287): error:  #67: expected a "}"
+      ADC1_2_IRQn                 = 18,     /*!< adc1 and adc2 global interrupt                       */
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(348): warning:  #12-D: parsing restarts here after previous syntax error
+  } IRQn_Type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(161): error:  #67: expected a "}"
+    CRM_DMA1_PERIPH_CLOCK                  = MAKE_VALUE(0x14, 0),  /*!< dma1 periph clock */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(221): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_clock_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(282): error:  #67: expected a "}"
+    CRM_EMAC_PERIPH_RESET                  = MAKE_VALUE(0x28, 14), /*!< emac periph reset */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(334): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_reset_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\drivers\src\at32f403a_407_tmr.c: 3 warnings, 5 errors
+compiling at32f403a_407_usart.c...
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(287): error:  #67: expected a "}"
+      ADC1_2_IRQn                 = 18,     /*!< adc1 and adc2 global interrupt                       */
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(348): warning:  #12-D: parsing restarts here after previous syntax error
+  } IRQn_Type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(161): error:  #67: expected a "}"
+    CRM_DMA1_PERIPH_CLOCK                  = MAKE_VALUE(0x14, 0),  /*!< dma1 periph clock */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(221): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_clock_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(282): error:  #67: expected a "}"
+    CRM_EMAC_PERIPH_RESET                  = MAKE_VALUE(0x28, 14), /*!< emac periph reset */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(334): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_reset_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\drivers\src\at32f403a_407_usart.c: 3 warnings, 5 errors
+compiling at32f403a_407_usb.c...
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(287): error:  #67: expected a "}"
+      ADC1_2_IRQn                 = 18,     /*!< adc1 and adc2 global interrupt                       */
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(348): warning:  #12-D: parsing restarts here after previous syntax error
+  } IRQn_Type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(161): error:  #67: expected a "}"
+    CRM_DMA1_PERIPH_CLOCK                  = MAKE_VALUE(0x14, 0),  /*!< dma1 periph clock */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(221): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_clock_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(282): error:  #67: expected a "}"
+    CRM_EMAC_PERIPH_RESET                  = MAKE_VALUE(0x28, 14), /*!< emac periph reset */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(334): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_reset_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\drivers\src\at32f403a_407_usb.c: 3 warnings, 5 errors
+compiling at32f403a_407_wdt.c...
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(287): error:  #67: expected a "}"
+      ADC1_2_IRQn                 = 18,     /*!< adc1 and adc2 global interrupt                       */
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(348): warning:  #12-D: parsing restarts here after previous syntax error
+  } IRQn_Type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(161): error:  #67: expected a "}"
+    CRM_DMA1_PERIPH_CLOCK                  = MAKE_VALUE(0x14, 0),  /*!< dma1 periph clock */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(221): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_clock_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(282): error:  #67: expected a "}"
+    CRM_EMAC_PERIPH_RESET                  = MAKE_VALUE(0x28, 14), /*!< emac periph reset */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(334): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_reset_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\drivers\src\at32f403a_407_wdt.c: 3 warnings, 5 errors
+compiling at32f403a_407_wwdt.c...
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(287): error:  #67: expected a "}"
+      ADC1_2_IRQn                 = 18,     /*!< adc1 and adc2 global interrupt                       */
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(348): warning:  #12-D: parsing restarts here after previous syntax error
+  } IRQn_Type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(161): error:  #67: expected a "}"
+    CRM_DMA1_PERIPH_CLOCK                  = MAKE_VALUE(0x14, 0),  /*!< dma1 periph clock */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(221): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_clock_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(282): error:  #67: expected a "}"
+    CRM_EMAC_PERIPH_RESET                  = MAKE_VALUE(0x28, 14), /*!< emac periph reset */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(334): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_reset_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\drivers\src\at32f403a_407_wwdt.c: 3 warnings, 5 errors
+compiling at32f403a_407_xmc.c...
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(287): error:  #67: expected a "}"
+      ADC1_2_IRQn                 = 18,     /*!< adc1 and adc2 global interrupt                       */
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(348): warning:  #12-D: parsing restarts here after previous syntax error
+  } IRQn_Type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(161): error:  #67: expected a "}"
+    CRM_DMA1_PERIPH_CLOCK                  = MAKE_VALUE(0x14, 0),  /*!< dma1 periph clock */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(221): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_clock_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(282): error:  #67: expected a "}"
+    CRM_EMAC_PERIPH_RESET                  = MAKE_VALUE(0x28, 14), /*!< emac periph reset */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(334): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_reset_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\drivers\src\at32f403a_407_xmc.c: 3 warnings, 5 errors
+assembling startup_at32f403a_407.s...
+compiling system_at32f403a_407.c...
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(287): error:  #67: expected a "}"
+      ADC1_2_IRQn                 = 18,     /*!< adc1 and adc2 global interrupt                       */
+..\..\..\libraries\cmsis\cm4\device_support\at32f403a_407.h(348): warning:  #12-D: parsing restarts here after previous syntax error
+  } IRQn_Type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(161): error:  #67: expected a "}"
+    CRM_DMA1_PERIPH_CLOCK                  = MAKE_VALUE(0x14, 0),  /*!< dma1 periph clock */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(221): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_clock_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(282): error:  #67: expected a "}"
+    CRM_EMAC_PERIPH_RESET                  = MAKE_VALUE(0x28, 14), /*!< emac periph reset */
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(334): warning:  #12-D: parsing restarts here after previous syntax error
+  } crm_periph_reset_type;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\drivers\inc\at32f403a_407_crm.h(853): error:  #101: "ahben_bit" has already been declared in the current scope
+      } ahben_bit;
+..\..\..\libraries\cmsis\cm4\device_support\system_at32f403a_407.c: 3 warnings, 5 errors
+compiling croutine.c...
+compiling event_groups.c...
+compiling list.c...
+compiling queue.c...
+compiling stream_buffer.c...
+compiling timers.c...
+compiling tasks.c...
+compiling heap_4.c...
+".\objects\at32f407_freertos_ac5.axf" - 208 Error(s), 117 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ArteryTek
+                
+                ArteryTek.AT32F403A_407_DFP.2.1.8
+                ArteryTek AT32F403A_407 Series Device Support,Drivers
+
+<h2>Collection of Component include folders:</h2>
+  C:/Users/84590/AppData/Local/Arm/Packs/ArteryTek/AT32F403A_407_DFP/2.1.8/Device/Include
+
+<h2>Collection of Component Files used:</h2>
+Target not created.
+Build Time Elapsed:  00:00:05
+</pre>
+</body>
+</html>

@@ -3,6 +3,7 @@
 #include "CtlLoop.h"
 #include "charge.h"
 #include "printf-stdarg.h"
+#include "oled.h"
 
 /* ================ extern ================ */
 extern pid_struct pid_ctrol[4];	
@@ -52,6 +53,7 @@ char uart_rx_buf[256]	= {0};
 //物联网接收开关信号
 int8_t Netbutton = -1;	//物联网接收信号-接收到开时刻为1，关时刻为0，其他时刻为-1
 
+uint8_t wifiToFind = 2;
 /* ================ function ================ */
 void usart1_init(void)
 {
@@ -130,8 +132,16 @@ void USART1_IRQHandler(void)
 		{
 			uart_rx_buf[usart_rx_counter - 2 ] = '\0';
 			usart_rx_counter = 0;
+			if (wifiToFind)
+			{
+				if (0 == strncmp(uart_rx_buf,"+CWJAP:", 7) || (0 == strncmp(uart_rx_buf,"smartconfig connected wifi", 26)))
+				{
+					wifiToFind = 0;
+				}
+			}
 			esp8266_sub_getparms();
-		}
+			memset(uart_rx_buf,0,sizeof(uart_rx_buf));
+		}	
 	}
 }
 
@@ -185,13 +195,28 @@ uint8_t esp8266_Init(void)
 		return 2;
 	}
 	
+	
+	//tiny_sprintf(uart_tx_temp, "AT+CWJAP=\"%s\",\"%s\"\r\n", WIFI, WIFIASSWORD);//连接热点
 	memset(uart_rx_buf,0,sizeof(uart_rx_buf));
-	tiny_sprintf(uart_tx_temp, "AT+CWJAP=\"%s\",\"%s\"\r\n", WIFI, WIFIASSWORD);//连接热点
-	Esp8266_send_data((u8*)uart_tx_temp, strlen(uart_tx_temp));
-	dwt_delay_sec(2);
-	if(strcmp(uart_rx_buf,"OK"))
+	Esp8266_send_data((u8*)"AT+CWJAP?\r\n", 12);	
+	dwt_delay_ms(500);
+	if (wifiToFind) //若未成功连上wifi,需要配网
 	{
-		return 3;
+		GUI_ShowString(0, 32, (u8*)"Please configure wifi", 1);
+		GUI_ShowString(30, 40, (u8*)"via WeChat!", 1);
+		
+		memset(uart_rx_buf,0,sizeof(uart_rx_buf));
+		Esp8266_send_data((u8*)"AT+CWAUTOCONN=1\r\n", 18);
+		dwt_delay_ms(100);
+		
+		Esp8266_send_data((u8*)"AT+CWSTARTSMART=3\r\n", 20);
+		while (wifiToFind){};
+			
+		memset(uart_rx_buf,0,sizeof(uart_rx_buf));	
+		Esp8266_send_data((u8*)"AT+CWSTOPSMART\r\n", 17);
+		dwt_delay_ms(100);
+			
+		OLED_Fill(0);
 	}
 	
 	memset(uart_rx_buf,0,sizeof(uart_rx_buf));

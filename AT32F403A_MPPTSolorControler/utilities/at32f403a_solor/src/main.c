@@ -125,9 +125,9 @@ void sStateInit_task_function(void *pvParameters)
 			/* 初始化pid参数 */
 			increPid_init();	
 		
-			tmr_channel_enable(TMR1,TMR_SELECT_CHANNEL_1, TRUE);	//打开TIMR1ch1，输出pwm
-			tmr_channel_enable(TMR1,TMR_SELECT_CHANNEL_1C, TRUE);	//打开TIMR1ch1，输出pwm
-			tmr_interrupt_enable(TMR1, TMR_OVF_INT, TRUE);				//打开TIMR1中断，开启PID控制
+//			tmr_channel_enable(TMR1,TMR_SELECT_CHANNEL_1, TRUE);	//打开TIMR1ch1，输出pwm
+//			tmr_channel_enable(TMR1,TMR_SELECT_CHANNEL_1C, TRUE);	//打开TIMR1ch1，输出pwm
+//			tmr_interrupt_enable(TMR1, TMR_OVF_INT, TRUE);				//打开TIMR1中断，开启PID控制
 
 //			SEGGER_RTT_printf("Iin_offset= %d,Iout_offset = %d\r\n",dac_eff.Iin_offset, dac_eff.Iout_offset);
 				
@@ -357,12 +357,12 @@ void SetupHardware()
 	ADC_INIT();									/* init adc */
 	TMR1_Init();								/* init timer */
 	
+	OLED_Init();	  		 				/* init oled */
+	
 	while (esp8266_Init())			/* init esp8266 */
 	{
 		dwt_delay_ms(100);
 	}
-	
-	OLED_Init();	  		 				/* init oled */
 	
 #ifdef RTT_DEBUG
 //	SEGGER_SYSVIEW_Conf();

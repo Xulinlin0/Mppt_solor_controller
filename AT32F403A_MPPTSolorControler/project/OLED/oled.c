@@ -308,6 +308,7 @@ void OLED_Init(void)
 	OLED_WR_Byte(0x8D, OLED_CMD); /*set charge pump disable*/ 
 	OLED_WR_Byte(0x14, OLED_CMD);
 	OLED_WR_Byte(0xAF, OLED_CMD); /*display ON*/
+	
 }  
 
 void OLED_Set_Pixel(unsigned char x, unsigned char y,unsigned char color)

@@ -41,3 +41,5 @@
 .\objects\esp8266.o: ..\..\..\project\CtlLoop\CtlLoop.h
 .\objects\esp8266.o: ..\..\..\project\charge\charge.h
 .\objects\esp8266.o: ..\..\..\middlewares\freertos\source\include\printf-stdarg.h
+.\objects\esp8266.o: ..\..\..\project\OLED\oled.h
+.\objects\esp8266.o: ..\..\..\project\OLED\oled.h

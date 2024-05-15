@@ -1,0 +1,37 @@
+/* 		IO Òý½Å		*/
+X IIC:£¨v1_buck)
+	SCL 		PB6  
+	SDA  		PB7
+X BuckBoard:(v2_buck)
+	SD 			PB8	
+	OPEN  		PB9	
+	LED1 		PB10
+	LED2   		PB11
+X SPI2£º
+	SCK			PB13(ÓëTIM1CH1N³åÍ»£©		
+	MISO		PB14 	
+	MOSI		PB15 
+OLED:
+	SCL-D0			PB3
+	SDA(D1)-MOSI	PB5
+	RST				PA11
+	DS				PA12
+Timer:		
+	TIM1CH1  	PA8
+	TIM1CH1N	PB13
+ADC1:
+	ADC_Vin		PB0
+	ADC_Iin 	PB1	
+	ADC_Vout	PA7	
+	ADC_Iout	PA6
+USART:
+	TX			PA9
+	RX			PA10
+KEY:
+	KEY1		PB15
+	KEY2		PB14
+LED:
+	LED1		PA3
+	LED2		PA4
+	
+
